@@ -6,6 +6,8 @@ import compression from 'compression';
 import cors from 'cors';
 import mongoose from 'mongoose';
 
+import router from './router';
+
 const app = express();
 
 app.use(cors());
@@ -33,3 +35,5 @@ mongoose.connection.on('error', err => {
     console.log('MongoDB connection error. Please make sure MongoDB is running.');
     process.exit();
 });
+
+app.use('/', router());
