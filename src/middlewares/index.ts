@@ -35,3 +35,4 @@ export const isAuthenticated = async (req: express.Request, res: express.Respons
     } catch (error) {
         return res.status(401).send({ error: 'Not authenticated' });
     }
+}
